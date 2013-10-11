@@ -1,5 +1,5 @@
 set :haml, :format => :html5
 
 get '/' do
-  haml :index
+  haml :index, :locals => { :y => params[:y] }
 end
