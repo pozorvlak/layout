@@ -1,11 +1,17 @@
 %html
   %head
-    %title My Sinatra App
+    %title Honeycomb layout engine
 
   %body
-    %h1 Hello World
-    %p Your app is now up and running!
-    - if !(y.nil?)
-      %p The value of y was #{y}
+    %p Use whatever units you like, but use the same unit for all measurements.
+    %form{ :name => "dimensions", :action => "/", :method => "get" }
+      %label{:for => "diameter"} Distance between adjacent plants:
+      %input{:type => "float", :name => "diameter", :value => diameter}
+      %label{:for => "width"} Width of bed:
+      %input{:type => "float", :name => "width", :value => width}
+      %label{:for => "length"} Length of bed:
+      %input{:type => "float", :name => "length", :value => length}
+      %input{:type => "submit"}
+
     - if !(num_hexes.nil?)
-      %p The value of num_hexes was #{num_hexes}
+      %p You can fit #{num_hexes} plants into a #{width}x#{length} bed.
